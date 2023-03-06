@@ -1,0 +1,23 @@
+<div class="container">
+  <form [formGroup]="recipeForm">
+    <div class="child">
+      <label for="name">Name: </label>
+      <input class="nameInput" id="name" type="text" formControlName="name" />
+    </div>
+    <div class="child">
+      <label for="photo">Photo: </label>
+      <input id="photo" type="file" formControlName="photo" />
+    </div>
+
+    <div class="child">
+      <label for="ingredients">Ingredients: </label>
+      <textarea id="ingredients" formControlName="ingredients"></textarea>
+    </div>
+
+    <div class="child">
+      <label for="howTo">How to: </label>
+      <textarea id="howTo" formControlName="howTo"></textarea>
+    </div>
+    <button [disabled]="!recipeForm.valid" (click)="confirm()">Create</button>
+  </form>
+</div>
