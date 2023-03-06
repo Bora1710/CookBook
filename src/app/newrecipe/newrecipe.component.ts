@@ -16,17 +16,23 @@ export class NewRecipeComponent {
   });
 
   confirm() {
-    let formValue = this.recipeForm.value as Recipe;
-    let recipe = new Recipe(
-      formValue.name,
-      formValue.photo,
-      formValue.ingredientes,
-      formValue.howTo
-    );
+    let recipe = new Recipe(this.recipeForm.value);
+    let recipes: string = localStorage.getItem('recipes') || '';
+    if (!recipes) {
+      recipes = JSON.stringify([]);
+    }
+
+    let newRecipes = JSON.parse(recipes);
+
+    if (newRecipes[newRecipes.length - 1]) {
+      recipe.id = newRecipes[newRecipes.length - 1].id + 1;
+    }
+
+    newRecipes.push(recipe);
+    localStorage.setItem('recipes', JSON.stringify(newRecipes));
   }
 }
-/*pronaci kako se ubacuju tipovi za formcontrole  [] as done element
-    2. dobaviti sve recepte iz local storage-a, konkatenirati recept sa 22 linije,
-    3. snimiti updateovan array u local storage-u
+/*
     4. rutirati nazad na home page 
-    .... izlistavanje na home ? */
+    .... izlistavanje na home ? 
+*/
