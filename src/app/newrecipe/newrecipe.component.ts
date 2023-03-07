@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Recipe } from './newrecipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cook-newrecipe',
@@ -8,6 +9,7 @@ import { Recipe } from './newrecipe';
   styleUrls: ['./newrecipe.component.css'],
 })
 export class NewRecipeComponent {
+  constructor(private router: Router) {}
   recipeForm = new FormGroup({
     name: new FormControl<string>('', Validators.required),
     photo: new FormControl<string>('', Validators.required),
@@ -30,9 +32,10 @@ export class NewRecipeComponent {
 
     newRecipes.push(recipe);
     localStorage.setItem('recipes', JSON.stringify(newRecipes));
+    this.router.navigate(['/']);
   }
 }
 /*
-    4. rutirati nazad na home page 
-    .... izlistavanje na home ? 
+    4. rutirati nazad na home page  [DONE]
+    .... izlistavanje na home ?   [DONE al je lose]
 */

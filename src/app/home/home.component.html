@@ -9,3 +9,28 @@
 >
   Create New Recipe
 </button>
+
+<h1>All Recipes</h1>
+
+<section *ngFor="let recipe of recipes">
+  <a [routerLink]="['/recipe']">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title> {{ recipe.name }} </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="recipe.photo" alt="{{ recipe.name }} photo" />
+      <mat-card-content>
+        <p>*ngFor="let ingredient of recipe.ingredients"</p>
+      </mat-card-content>
+    </mat-card>
+  </a>
+</section>
+
+<mat-paginator
+  [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10]"
+  aria-label="Select page"
+>
+</mat-paginator>

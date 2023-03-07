@@ -8,7 +8,9 @@ import { NewRecipeComponent } from './newrecipe/newrecipe.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatPaginatorModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
