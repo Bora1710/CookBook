@@ -7,7 +7,7 @@ import { RecipeComponent } from './recipe/recipe.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'newrecipe', component: NewRecipeComponent },
-  { path: 'recipe', component: RecipeComponent }, //TODO: Mora da se rutira po id-u (/:id)
+  { path: 'recipes/:id', component: RecipeComponent }, //TODO: Mora da se rutira po id-u (/:id)  reseno:bora solo
   { path: '**', redirectTo: '' },
 ];
 
