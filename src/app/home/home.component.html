@@ -21,7 +21,14 @@
       </mat-card-header>
       <img mat-card-image [src]="recipe.photo" alt="{{ recipe.name }} photo" />
       <mat-card-content>
-        <p>*ngFor="let ingredient of recipe.ingredients"</p>
+        <p>Ingredients:</p>
+  <ul>
+    <li>{{ recipe.ingredients }}</li>
+  </ul>
+  <p>How to make it:</p>
+  <ol>
+    <li>{{recipe.howTo}}</li>
+  </ol>
       </mat-card-content>
     </mat-card>
   </a>
