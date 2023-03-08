@@ -10,11 +10,11 @@
   Create New Recipe
 </button>
 
-<h1>All Recipes</h1>
 
+<h1>All Recipes</h1>
 <section *ngFor="let recipe of recipes">
-  <a [routerLink]="['/recipe']">
-    <mat-card class="example-card">
+  
+    <mat-card class="example-card"  routerLink="/recipes/{{recipe.id}}">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title> {{ recipe.name }} </mat-card-title>
@@ -31,7 +31,7 @@
   </ol>
       </mat-card-content>
     </mat-card>
-  </a>
+  
 </section>
 
 <mat-paginator

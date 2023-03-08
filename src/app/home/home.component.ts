@@ -9,6 +9,12 @@ import { Recipe } from '../newrecipe/newrecipe';
 export class HomeComponent implements OnInit {
   recipes: Recipe[] = [];
 
+  goToRecipe () {
+    window.location.href = "/recipes/";
+}
+  
+
+
   ngOnInit(): void {
     const recipesString = localStorage.getItem('recipes');
     if (recipesString) {
