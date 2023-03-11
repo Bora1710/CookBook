@@ -20,5 +20,10 @@
 }
 
 section {
-  margin-bottom: 20px; 
+  display: inline-flex;
+  margin: 20px; 
+}
+
+button {
+  margin: 10px;
 }
