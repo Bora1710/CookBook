@@ -10,30 +10,27 @@
   Create New Recipe
 </button>
 
-
 <h1>All Recipes</h1>
 <section *ngFor="let recipe of recipes">
-  
-    <mat-card class="example-card"  routerLink="/recipes/{{recipe.id}}">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title> {{ recipe.name }} </mat-card-title>
-      </mat-card-header>
-      <img mat-card-image [src]="recipe.photo" alt="{{ recipe.name }} photo" />
-      <mat-card-content>
-        <p>Ingredients:</p>
-  <ul>
-    <li>{{ recipe.ingredients }}</li>
-  </ul>
-  <p>How to make it:</p>
-  <ol>
-    <li>{{recipe.howTo}}</li>
-  </ol>
-<button  mat-raised-button>Edit</button>
-<button  mat-raised-button>Delete</button>
-      </mat-card-content>
-    </mat-card>
-  
+  <mat-card class="example-card" routerLink="/recipes/{{ recipe.id }}">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title> {{ recipe.name }} </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="recipe.photo" alt="{{ recipe.name }} photo" />
+    <mat-card-content>
+      <p>Ingredients:</p>
+      <ul>
+        <li>{{ recipe.ingredients }}</li>
+      </ul>
+      <p>How to make it:</p>
+      <ol>
+        <li>{{ recipe.howTo }}</li>
+      </ol>
+      <button mat-raised-button>Edit</button>
+      <button mat-raised-button (click)="removeRecipe()">Delete</button>
+    </mat-card-content>
+  </mat-card>
 </section>
 
 <mat-paginator

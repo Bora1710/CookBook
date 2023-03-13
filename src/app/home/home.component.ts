@@ -9,16 +9,23 @@ import { Recipe } from '../newrecipe/newrecipe';
 export class HomeComponent implements OnInit {
   recipes: Recipe[] = [];
 
-  goToRecipe () {
-    window.location.href = "/recipes/";
-}
-  
-
+  goToRecipe() {
+    window.location.href = '/recipes/';
+  }
 
   ngOnInit(): void {
     const recipesString = localStorage.getItem('recipes');
     if (recipesString) {
       this.recipes = JSON.parse(recipesString);
+    }
+  }
+
+  removeRecipe() {
+    if (window.confirm('Are sure you want to delete this item ?')) {
+      localStorage.removeItem('recipes'); //Brise sve iz local.storage i vraca se na homepage, treba namestiti da brise po id samo taj item
+      window.location.href = '';
+    } else {
+      window.location.href = '';
     }
   }
 
