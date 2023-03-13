@@ -1,6 +1,11 @@
 <!-- TODO: izlistati sve recepte i na klik jednog recepta rutirati na stranicu /recipe/:id -->
 <!-- TODO: svaki recept treba da ima delete button koji ce da ga obrise 
   (kada se klikne na delete button potrebno je da iskoci popup koji ce da pita da li ste sigurni da zelite da obirsete ovaj recept?) -->
+
+<h1>All Recipes</h1>
+<h2 *ngIf="recipes.length === 0">
+  There are no recipes. Do you want to create new?
+</h2>
 <button
   mat-raised-button
   class="newrecipe"
@@ -9,8 +14,6 @@
 >
   Create New Recipe
 </button>
-
-<h1>All Recipes</h1>
 <section *ngFor="let recipe of recipes">
   <mat-card class="example-card" routerLink="/recipes/{{ recipe.id }}">
     <mat-card-header>
