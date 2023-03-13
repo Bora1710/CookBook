@@ -20,9 +20,16 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  removeRecipe() {
-    if (window.confirm('Are sure you want to delete this item ?')) {
-      localStorage.removeItem('recipes'); //Brise sve iz local.storage i vraca se na homepage, treba namestiti da brise po id samo taj item
+  removeRecipe(recipeId: number): void {
+    if (window.confirm('Are you sure you want to delete this recipe?')) {
+      let recipes: string = localStorage.getItem('recipes') || '';
+      if (recipes) {
+        let newRecipes = JSON.parse(recipes).filter(
+          (recipe: Recipe) => recipe.id !== recipeId
+        );
+        localStorage.setItem('recipes', JSON.stringify(newRecipes));
+      }
+      // Redirect to the homepage after the recipe is removed
       window.location.href = '';
     } else {
       window.location.href = '';
