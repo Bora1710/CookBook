@@ -17,7 +17,7 @@
 <br />
 <!-- <br> promeniti ovo -->
 <section *ngFor="let recipe of recipes">
-  <mat-card class="example-card" routerLink="/recipes/{{ recipe.id }}">
+  <mat-card class="example-card" [routerLink]="['/recipes', recipe.id]">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title> {{ recipe.name }} </mat-card-title>

@@ -1,0 +1,29 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.card {
+  position: relative;
+}
+
+.card a::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+section {
+  display: inline-flex;
+  margin: 20px;
+}
+
+button {
+  margin: 10px;
+}

@@ -1,1 +1,17 @@
-<p>recipe works!</p>
+<mat-card class="example-card" [routerLink]="['/recipes', recipe.id]">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title> {{ recipe.name }} </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="recipe.photo" alt="{{ recipe.name }} photo" />
+  <mat-card-content>
+    <p>Ingredients:</p>
+    <ul>
+      <li>{{ recipe.ingredients }}</li>
+    </ul>
+    <p>How to make it:</p>
+    <ol>
+      <li>{{ recipe.howTo }}</li>
+    </ol>
+  </mat-card-content>
+</mat-card>

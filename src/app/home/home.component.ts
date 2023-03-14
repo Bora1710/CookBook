@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../newrecipe/newrecipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cook-home',
@@ -7,10 +8,12 @@ import { Recipe } from '../newrecipe/newrecipe';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  constructor(private router: Router) {}
+
   recipes: Recipe[] = [];
 
-  goToRecipe() {
-    window.location.href = '/recipes/';
+  goToRecipe(recipeId: number) {
+    this.router.navigate(['/recipes', recipeId]);
   }
 
   ngOnInit(): void {
