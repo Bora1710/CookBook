@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
         );
         localStorage.setItem('recipes', JSON.stringify(newRecipes));
       }
-      // Redirect to the homepage after the recipe is removed
       window.location.href = '';
     } else {
       window.location.href = '';
