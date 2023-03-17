@@ -12,6 +12,13 @@ export class HomeComponent implements OnInit {
 
   recipes: Recipe[] = [];
 
+  currentPage = 0;
+  itemsPerPage = 5;
+
+  updatePage(event: any) {
+    this.currentPage = event.pageIndex;
+  }
+
   goToRecipe(recipeId: number) {
     this.router.navigate(['/recipes', recipeId]);
   }
