@@ -3,9 +3,10 @@
   (kada se klikne na delete button potrebno je da iskoci popup koji ce da pita da li ste sigurni da zelite da obirsete ovaj recept?) -->
 
 <h1>All Recipes</h1>
-<h2 *ngIf="recipes.length === 0">
+<h2 *ngIf="!recipes.length">
   There are no recipes. Do you want to create new?
 </h2>
+
 <button
   mat-raised-button
   class="newrecipe"
@@ -16,7 +17,14 @@
 </button>
 <br />
 <!-- <br> promeniti ovo -->
-<section *ngFor="let recipe of recipes.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)">
+<section
+  *ngFor="
+    let recipe of recipes.slice(
+      currentPage * itemsPerPage,
+      (currentPage + 1) * itemsPerPage
+    )
+  "
+>
   <mat-card class="example-card" [routerLink]="['/recipes', recipe.id]">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
