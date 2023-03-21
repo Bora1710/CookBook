@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
       }
       window.location.href = '';
     } else {
-      window.location.href = '';
+      window.location.href = '';  // ne radi mi this.router.navigate(['']); ?
     }
   }
 
