@@ -8,12 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
-
   recipes: Recipe[] = [];
 
   currentPage = 0;
   itemsPerPage = 5;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    let recipesString = localStorage.getItem('recipes');
+    if (recipesString) {
+      this.recipes = JSON.parse(recipesString);
+    }
+  }
 
   updatePage(event: any) {
     this.currentPage = event.pageIndex;
@@ -21,13 +28,6 @@ export class HomeComponent implements OnInit {
 
   goToRecipe(recipeId: number) {
     this.router.navigate(['/recipes', recipeId]);
-  }
-
-  ngOnInit(): void {
-    const recipesString = localStorage.getItem('recipes');
-    if (recipesString) {
-      this.recipes = JSON.parse(recipesString);
-    }
   }
 
   removeRecipe(recipeId: number): void {

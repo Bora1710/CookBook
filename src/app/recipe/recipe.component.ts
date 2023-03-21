@@ -8,16 +8,16 @@ import { Recipe } from '../newrecipe/newrecipe';
   styleUrls: ['./recipe.component.css'],
 })
 export class RecipeComponent implements OnInit {
-  recipe!: Recipe;
+  recipe: Recipe = new Recipe({});
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const recipeId = +this.route.snapshot.params['id'];
-    const recipesString = localStorage.getItem('recipes');
+    let recipeId = +this.route.snapshot.params['id']; // TODO: koristi subscribe na promenu rute i odatle uzimati ID
+    let recipesString = localStorage.getItem('recipes');
     if (recipesString) {
-      const recipes: Recipe[] = JSON.parse(recipesString);
-      this.recipe = recipes.find((r) => r.id === recipeId)!;
+      let recipes: Recipe[] = JSON.parse(recipesString);
+      this.recipe = recipes.find((r) => r.id === recipeId) as Recipe;
     }
   }
 }
