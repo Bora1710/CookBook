@@ -28,7 +28,7 @@
           <li>{{ recipe.howTo }}</li>
         </ol>
         <button mat-raised-button>Edit</button>
-        <button mat-raised-button (click)="removeRecipe(recipe.id)">
+        <button mat-raised-button (click)="removeRecipe(recipe.id, $event)">
           Delete
         </button>
       </mat-card-content>

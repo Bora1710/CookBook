@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/recipes', recipeId]);
   }
 
-  removeRecipe(recipeId: number): void {
+  removeRecipe(recipeId: number, event: Event): void {
     if (window.confirm('Are you sure you want to delete this recipe?')) {
       let recipes: string = localStorage.getItem('recipes') || '';
       if (recipes) {
@@ -39,10 +39,8 @@ export class HomeComponent implements OnInit {
         );
         localStorage.setItem('recipes', JSON.stringify(newRecipes));
       }
-      window.location.href = '';
-    } else {
-      window.location.href = '';  // ne radi mi this.router.navigate(['']); ?
     }
+    event.stopPropagation();
   }
 
   // ...
