@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
           (recipe: Recipe) => recipe.id !== recipeId
         );
         localStorage.setItem('recipes', JSON.stringify(newRecipes));
+        this.recipes = newRecipes;
       }
     }
     event.stopPropagation();
