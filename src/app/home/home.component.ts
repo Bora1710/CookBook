@@ -30,6 +30,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/recipes', recipeId]);
   }
 
+  onSubscribe() {
+    window.alert('You are now subscribed to new recipes');
+  }
+
   removeRecipe(recipeId: number, event: Event): void {
     if (window.confirm('Are you sure you want to delete this recipe?')) {
       let recipes: string = localStorage.getItem('recipes') || '';

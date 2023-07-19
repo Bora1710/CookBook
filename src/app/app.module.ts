@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     RecipeComponent,
     NewRecipeComponent,
     HomeComponent,
+    SubscribeComponent,
   ],
   imports: [
     BrowserModule,
