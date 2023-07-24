@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { PaginatorPipePipe } from './paginator-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
     NewRecipeComponent,
     HomeComponent,
     SubscribeComponent,
+    PaginatorPipePipe,
   ],
   imports: [
     BrowserModule,
