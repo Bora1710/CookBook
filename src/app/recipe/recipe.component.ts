@@ -13,7 +13,10 @@ export class RecipeComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    let recipeId = +this.route.snapshot.params['id']; // TODO: koristi subscribe na promenu rute i odatle uzimati ID
+    let recipeId = 0;
+    this.route.params.subscribe((params) => {
+      recipeId = +params['id'];
+    }); // TODO: koristi subscribe na promenu rute i odatle uzimati ID  DONE
     let recipesString = localStorage.getItem('recipes');
     if (recipesString) {
       let recipes: Recipe[] = JSON.parse(recipesString);
